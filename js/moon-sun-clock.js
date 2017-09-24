@@ -13,10 +13,9 @@ MOON_SUN_CLOCK.MINUTES_PER_HOUR = 60;
 
 MOON_SUN_CLOCK.Rotate = function() {
   let sunMoonPic = document.getElementById("moon-sun");
-  sunMoonPic.style.transform = "rotate(" + MOON_SUN_CLOCK.GetAngle() + "deg)";
+  sunMoonPic.style.transform = "rotate(" + MOON_SUN_CLOCK.GetAngle(new Date()) + "deg)";
 }
 
-MOON_SUN_CLOCK.GetAngle = function() {
-  let time = new Date();
+MOON_SUN_CLOCK.GetAngle = function(time) {
   return -MOON_SUN_CLOCK.DEGREES_PER_HOUR * (time.getHours() + time.getMinutes() / MOON_SUN_CLOCK.MINUTES_PER_HOUR);
 }
