@@ -1,0 +1,15 @@
+#moon-sun-clock, #moon-sun {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: no-repeat center;
+}
+
+#moon-sun-clock {
+  background-image: url(../img/frame.svg);
+}
+
+#moon-sun {
+  z-index: -1;
+  background-image: url(../img/clock.svg);
+}
