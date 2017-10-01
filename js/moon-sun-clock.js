@@ -28,8 +28,15 @@ MOON_SUN_CLOCK.GetAngle = function(time) {
   return -MOON_SUN_CLOCK.DEGREES_PER_HOUR * (time.getHours() + time.getMinutes() / MOON_SUN_CLOCK.MINUTES_PER_HOUR);
 }
 
-MOON_SUN_CLOCK.ShowClock = function(time) {
-  MOON_SUN_CLOCK.CLOCK.innerText =  MOON_SUN_CLOCK.LeadingZero(time.getHours()) + ":" + MOON_SUN_CLOCK.LeadingZero(time.getMinutes()) + ":" +  MOON_SUN_CLOCK.LeadingZero(time.getSeconds());
+MOON_SUN_CLOCK.ShowClock = function(time, twentyFourHourMode) {
+  if(twentyFourHourMode) {
+    MOON_SUN_CLOCK.CLOCK.innerText =  MOON_SUN_CLOCK.LeadingZero(time.getHours()) + ":" + MOON_SUN_CLOCK.LeadingZero(time.getMinutes()) + ":" +  MOON_SUN_CLOCK.LeadingZero(time.getSeconds());
+  }
+
+  else {
+  	let ampm = time.getHours() > 12 ? 'PM' : 'AM';
+  	MOON_SUN_CLOCK.CLOCK.innerText =  MOON_SUN_CLOCK.LeadingZero(time.getHours() % 12) + ":" + MOON_SUN_CLOCK.LeadingZero(time.getMinutes()) + ":" +  MOON_SUN_CLOCK.LeadingZero(time.getSeconds()) + " " + ampm;
+  }
 }
 
 MOON_SUN_CLOCK.LeadingZero = function(number) {
