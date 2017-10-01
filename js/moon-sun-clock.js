@@ -29,5 +29,9 @@ MOON_SUN_CLOCK.GetAngle = function(time) {
 }
 
 MOON_SUN_CLOCK.ShowClock = function(time) {
-  MOON_SUN_CLOCK.CLOCK.innerText = time.getHours() + ":" + time.getMinutes() + ":" + time.getSeconds();
+  MOON_SUN_CLOCK.CLOCK.innerText =  MOON_SUN_CLOCK.LeadingZero(time.getHours()) + ":" + MOON_SUN_CLOCK.LeadingZero(time.getMinutes()) + ":" +  MOON_SUN_CLOCK.LeadingZero(time.getSeconds());
+}
+
+MOON_SUN_CLOCK.LeadingZero = function(number) {
+  return ("0" + number).slice(-2);
 }
