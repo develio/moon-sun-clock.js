@@ -1,7 +1,3 @@
-/**
- * @author Christoffer Ekblom
- */
-
 'use strict';
 
 var MOON_SUN_CLOCK = {};
@@ -24,4 +20,3 @@ MOON_SUN_CLOCK.Rotate = function() {
 MOON_SUN_CLOCK.GetAngle = function(time) {
   return -MOON_SUN_CLOCK.DEGREES_PER_HOUR * (time.getHours() + time.getMinutes() / MOON_SUN_CLOCK.MINUTES_PER_HOUR);
 }
-
